@@ -1,0 +1,6 @@
+interface:
+  display_name: "Career Ops Indonesia & Asia"
+  short_description: "Cari dan evaluasi lowongan Indonesia dan Asia"
+  default_prompt: "Use $career-ops-id to find fresh jobs or internships in Indonesia and Asia, then rank matches using the active candidate profile."
+
+

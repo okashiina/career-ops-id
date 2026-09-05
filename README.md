@@ -18,6 +18,36 @@
 
 <hr>
 
+## Indonesia & Asia-Pacific fork
+
+This repository is a public regional fork of [Santifer's career-ops](https://github.com/career-ops-hq/career-ops). It keeps the upstream CareerOps workflow—discovery, deduplication, filtering, evaluation, tailored documents, and tracking—and adds a reusable Indonesia/Asia-Pacific discovery layer.
+
+### What this fork adds
+
+- Indonesia-first search across official ATS sources, JobStreet, Glints, and public regional boards
+- Asia-Pacific fallback for Singapore, Malaysia, Thailand, Vietnam, and the Philippines when eligibility is clear
+- Indonesian and English search vocabulary for internships, entry-level, AI, software, data, product, and other fields
+- Freshness, location, compensation, eligibility, duplicate, and sector filters that are configured by each user's profile
+- A portable `$career-ops-id` agent skill; it never assumes a specific user's Windows path or personal profile
+
+### Quick start
+
+Clone the repository, install dependencies, create the user-layer profile files from the examples, then run the normal CareerOps commands:
+
+```bash
+git clone https://github.com/okashiina/career-ops-id.git
+cd career-ops-id
+npm install
+node doctor.mjs
+node scan.mjs --dry-run --since 7
+```
+
+For the reusable skill, set `CAREER_OPS_ROOT` to this checkout when the skill is installed outside the repository. The skill resolves the project root from that variable, an explicit path, or the current workspace; it does not embed a maintainer's local directory.
+
+User data such as CVs, profiles, trackers, reports, credentials, and local environment files is intentionally excluded by the repository's data contract and `.gitignore`. Review the upstream [security policy](SECURITY.md) before enabling browser or external integrations.
+
+This fork preserves upstream attribution, MIT licensing, and update compatibility. See [CONTRIBUTING.md](CONTRIBUTING.md) and the upstream project for the baseline architecture and contribution workflow.
+
 <p align="center">
   <a href="HIRED.md"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsantifer%2Fcareer-ops%2Fmain%2Fdocs%2Fhired-count.json&query=%24.count&label=%F0%9F%8E%89%20HIRED%20WITH%20CAREER-OPS&suffix=%20verified&color=2ea44f&style=for-the-badge&labelColor=2b3137" alt="Hired with career-ops: verified count"></a>
 </p>
