@@ -6,16 +6,16 @@ authors:
   - family-names: "Fernández de Valderrama"
     given-names: "Santiago"
     website: "https://santifer.io"
-url: "https://career-ops.org"
+url: "https://santifer.io"
 repository-code: "https://github.com/career-ops-hq/career-ops"
 license: MIT
 keywords:
   - ai
   - job-search
-  - career-ops
   - claude-code
+  - career
+  - career-ops
+  - careerops
   - automation
-  - local-first
-  - cli
-  - resume
-  - cover-letter
+  - llmops
+  - go-tui
