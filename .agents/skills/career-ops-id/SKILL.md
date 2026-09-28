@@ -9,6 +9,43 @@ description: >-
 
 # Career Ops Indonesia
 
+This community fork helps Indonesian candidates find suitable work in
+Indonesia, Asia-Pacific, and remote-global markets. It builds on
+[Santiago Fernández de Valderrama's career-ops](https://github.com/santifer/career-ops)
+and keeps its MIT license; see the repository's `ATTRIBUTION.md`.
+
+## Required first-use onboarding
+
+Before a hunt, JD evaluation, or CV tailoring, check whether this candidate's
+local profile has been personalized. On first use, collect missing details
+before starting the workflow. Reuse answers already given in the conversation
+or stored locally; never ask for the same information twice. Ask in Indonesian
+by default, briefly:
+
+- Target roles, level, industry, and preferred geography: Indonesia, Asia,
+  remote-global, or a combination.
+- Work preference: WFO, hybrid, remote, or flexible; clarify acceptable
+  onsite frequency or commute only when useful.
+- The latest CV: request an upload, pasted text, or the exact local file path.
+  If there is any ambiguity, ask which version is current.
+- Optional constraints: salary range/currency, employment type, deal-breakers,
+  language, and work authorization.
+
+Allow the user to skip optional details and do not invent answers. After they
+provide information, persist approved facts in the local user layer:
+`cv.md`, `config/profile.yml`, and `modes/_profile.md`. Preserve the existing
+schema and facts; never overwrite a newer CV without confirming which one to
+use. Keep candidate data out of the skill, public site, examples, and tracked
+system files. Git ignores the user-layer files. Tell the user which local
+files were updated without repeating private contact details.
+
+Explain that local storage keeps these files on the user's machine and out of
+the published repository, while an AI provider selected by the user may still
+process their content during AI workflows. If onboarding remains incomplete,
+pause job searches, evaluations, and tailoring until the missing required
+details are provided. When the user updates their CV/preferences, update this
+same local source of truth.
+
 Use the career-ops checkout selected for the current user or workspace. Do not
 assume a Windows path, a `Projects` directory, or another person's checkout.
 Resolve `PROJECT_ROOT` in this order:
@@ -159,5 +196,4 @@ evaluating, tailoring, filling forms, generating CVs/PDFs, and preparing
 outreach are allowed when requested. Never submit an application, send a
 message, click the final apply button, or disclose secrets without the user's
 explicit final action.
-
 

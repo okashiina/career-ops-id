@@ -157,6 +157,67 @@ Some users enable plugins (external integrations). If an enabled plugin ships a 
 
 ### First Run — Onboarding (IMPORTANT)
 
+#### Indonesia Fork: Required Candidate Intake
+
+When the user invokes the `career-ops-id` skill, run the normal doctor check,
+then check whether the user profile has been personalized. On the first use,
+do not start a search, evaluation, tailoring, or application workflow until you
+have completed the short candidate intake below. A request that already
+contains these answers counts; do not ask for them again. A pasted JD can be
+acknowledged, but hold its evaluation until intake is complete.
+
+Conduct the interview in Indonesian by default, one concise exchange at a time.
+Collect:
+
+1. Target role(s), level, industry, and preferred location/track (Indonesia,
+   Asia, remote-global, or a combination).
+2. Work arrangement: WFO, hybrid, remote, or flexible; note the user's
+   acceptable commute/onsite frequency when given.
+3. The latest CV: ask the user to attach it, paste it, or give its local path.
+   If a file is supplied, use the newest one the user identifies. Never search
+   unrelated folders or infer which CV is current. Do not replace a newer
+   existing CV without asking which version to keep.
+4. Useful profile preferences not reliably answered by a CV: employment type,
+   salary expectations/currency (optional), deal-breakers, language, and
+   authorization constraints (optional).
+
+Keep the intake brief; allow the user to say “belum tahu” or skip optional
+items. Never invent missing answers. Tell the user the answers and CV content
+will be written to their local Career Ops data root, which is git-ignored and
+not uploaded by this project. A CV or profile may still be sent to the AI
+provider selected by the user when they run AI workflows; do not promise that
+the AI provider never receives it.
+
+After the user provides information, persist it in the local user layer:
+
+- Update `{DATA_ROOT}/config/profile.yml` from
+  `config/profile.example.yml`; preserve its schema and the user's existing
+  values. Set target roles, location, work model preferences, language, and
+  any optional constraints only from user-provided facts.
+- Update `{DATA_ROOT}/modes/_profile.md` with targeting and hard filters, not
+  system behavior. Store WFO/hybrid/remote preferences in the existing
+  `compensation.location_flexibility` field in `config/profile.yml` and the
+  appropriate location policy section; do not invent a new YAML field.
+- Put the latest CV in `{DATA_ROOT}/cv.md`. If the user gives a local file,
+  read only that file and transcribe its supported facts; retain a supplied
+  source copy in `{DATA_ROOT}/documents/` only when useful and permitted by
+  the repository's intake rules. Never commit or copy it to the public site.
+- Do not duplicate phone, email, or other sensitive data into the Pages site,
+  README, examples, or issue content. Keep all candidate-specific records in
+  ignored user-layer paths.
+
+If the data root is the repository, the existing `.gitignore` protects these
+files. If it is external, write only to that explicitly resolved root. Before
+finishing, verify the expected files exist and that the data root is outside
+Git's tracked public content or is ignored. Summarize which local files were
+updated without echoing private contact details. Intake is reusable: when the
+user says their CV/preferences changed, update the local files and confirm the
+new source of truth.
+
+After this Indonesia-specific intake, follow the normal first-run steps below
+for any remaining missing system prerequisites. The active user layer remains
+the source of truth; never reset it during updates.
+
 **Before doing ANYTHING else, check if the system is set up.** On the first message of each session, run the cold-start check (this doc and `doctor.mjs` share the same prerequisite list, so they can never drift):
 
 ```bash
